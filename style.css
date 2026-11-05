@@ -1,0 +1,142 @@
+#rngdlez-extension {
+  --controls-top: 5px;
+  position: fixed;
+  z-index: 2147483647;
+  inset: 0;
+  pointer-events: none;
+}
+
+#rngdlez-extension .default-button,
+#rngdlez-extension .status-controls {
+  top: var(--controls-top);
+}
+
+#rngdlez-extension .default-button {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #27272a;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #fafafa;
+  font:
+    500 18px/1.25 system-ui,
+    sans-serif;
+  cursor: pointer;
+  transition:
+    background-color 150ms,
+    color 150ms,
+    border-color 150ms;
+  pointer-events: auto;
+}
+
+#rngdlez-extension .main-button {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#rngdlez-extension .clear-button {
+  left: 30%;
+}
+
+#rngdlez-extension .default-button:hover {
+  background: #27272a;
+  color: #fff;
+}
+
+#rngdlez-extension .default-button:focus-visible {
+  outline: 2px solid #a1a1aa;
+  outline-offset: 2px;
+}
+
+#rngdlez-extension .default-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#rngdlez-extension .toggle-button {
+  border-color: #5f2525;
+  background: #451a1a;
+  color: #f87171;
+}
+
+#rngdlez-extension .toggle-button:hover {
+  background: #5f2525;
+  color: #fca5a5;
+}
+
+#rngdlez-extension .toggle-button[aria-pressed="true"] {
+  border-color: #1f5a3b;
+  background: #143b2a;
+  color: #4ade80;
+}
+
+#rngdlez-extension .toggle-button[aria-pressed="true"]:hover {
+  background: #1f5a3b;
+  color: #86efac;
+}
+
+#rngdlez-extension .status-controls {
+  position: fixed;
+  left: 62.5%;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+}
+
+#rngdlez-extension .number-field {
+  box-sizing: border-box;
+  width: 120px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #27272a;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #18181b;
+  color: #fafafa;
+  font:
+    14px system-ui,
+    sans-serif;
+  outline: none;
+}
+
+#rngdlez-extension .number-field:focus {
+  border-color: #52525b;
+}
+
+#rngdlez-extension .status-controls .toggle-button {
+  position: static;
+  border-radius: 0 8px 8px 0;
+}
+
+@media (max-width: 520px) {
+  #rngdlez-extension {
+    --controls-top: 50px;
+  }
+
+  #rngdlez-extension .default-button {
+    padding: 0.375rem 0.5rem;
+    font-size: 14px;
+  }
+
+  #rngdlez-extension .number-field {
+    width: 72px;
+    padding: 0 6px;
+  }
+
+  #rngdlez-extension .clear-button {
+    left: 8px;
+  }
+
+  #rngdlez-extension .status-controls {
+    right: 8px;
+    left: auto;
+  }
+
+  #rngdlez-extension .status-controls .toggle-button {
+    padding-right: 0.375rem;
+    padding-left: 0.375rem;
+  }
+}
