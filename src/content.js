@@ -164,6 +164,10 @@ const stopAutoRollOnError = async (error) => {
 };
 
 rollButton.addEventListener("click", () => {
+  if (location.pathname !== "/") {
+    location.href = "/";
+    return;
+  }
   startRoll().catch((error) => {
     stopAutoRollOnError(error).catch((storageError) =>
       console.error("Could not stop auto roll after failure:", storageError),
@@ -172,6 +176,10 @@ rollButton.addEventListener("click", () => {
 });
 
 clearButton.addEventListener("click", () => {
+  if (location.pathname !== "/") {
+    location.href = "/";
+    return;
+  }
   if (!initialized || rollInProgress || autoRolling) {
     return;
   }
